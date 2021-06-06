@@ -19,7 +19,7 @@ cd ..
 
 echo -e "\n${bold}>${normal} A compilar SimulationParameters"
 cd SimulationParameters/
-javac --release 8 -classpath ../genclass.jar:.. ../commInfra/*.java $(find . -name '*.java')
+javac --release 8 -classpath ../genclass.jar ../commInfra/*.java $(find . -name '*.java')
 cd ..
 
 echo -e "\n${bold}>${normal} A compilar Interfaces"
@@ -79,41 +79,75 @@ cd ..
 
 echo -e "\n${bold}->${normal} A executar Registry"
 java -cp ".:./genclass.jar"\
-     -Djava.rmi.server.codebase="/Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Registry/"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      -Djava.security.policy=java.policy\
      Registry/ServerRegisterRemoteObject &
 serverId=$!
 sleep 1
 
+echo -e "\n${bold}>${normal} A executar GeneralRepos"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     -Djava.security.policy=java.policy\
+     GeneralRepos/MainProgram &
+serverId=$!
+sleep 1
 
+echo -e "\n${bold}>${normal} A executar DepartureAirport"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     -Djava.security.policy=java.policy\
+     DepartureAirport/MainProgram &
+serverId=$!
+sleep 1
 
+echo -e "\n${bold}>${normal} A executar Plane"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     -Djava.security.policy=java.policy\
+     Plane/MainProgram &
+serverId=$!
+sleep 1
 
+echo -e "\n${bold}>${normal} A executar DestinationAirport"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     -Djava.security.policy=java.policy\
+     DestinationAirport/MainProgram &
+serverId=$!
+sleep 1
 
+# Wait for the shared regions to be launched before lanching the intervening enities
+sleep 1
 
-# echo -e "\n${bold}>${normal} A executar GeneralRepos"
-# java -cp ".:./genclass.jar" GeneralRepos/Main/MainProgram &
+echo -e "\n${bold}>${normal} A executar Hostess"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     Hostess/MainProgram &
+serverId=$!
+sleep 1
 
-# echo -e "\n${bold}>${normal} A executar DepartureAirport"
-# java -cp ".:./genclass.jar" DepartureAirport/Main/MainProgram &
+echo -e "\n${bold}>${normal} A executar Pilot"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     Pilot/MainProgram &
+serverId=$!
+sleep 1
 
-# echo -e "\n${bold}>${normal} A executar Plane"
-# java -cp ".:./genclass.jar" Plane/Main/MainProgram &
-
-# echo -e "\n${bold}>${normal} A executar DestinationAirport"
-# java -cp ".:./genclass.jar" DestinationAirport/Main/MainProgram &
-
-# # Wait for the shared regions to be launched before lanching the intervening enities
-# sleep 1
-
-# echo -e "\n${bold}>${normal} A executar Hostess"
-# java -cp ".:./genclass.jar" Hostess/Main/MainProgram &
-
-# echo -e "\n${bold}>${normal} A executar Pilot"
-# java -cp ".:./genclass.jar" Pilot/Main/MainProgram &
-
-# echo -e "\n${bold}>${normal} A executar Passenger"
-# java -cp ".:./genclass.jar" Passenger/Main/MainProgram &
+echo -e "\n${bold}>${normal} A executar Passenger"
+java -cp ".:./genclass.jar"\
+     -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/"\
+     -Djava.rmi.server.useCodebaseOnly=false\
+     Passenger/MainProgram &
+serverId=$!
+sleep 1
 
 echo -e "\n${normal}----------------------------------------------------------\n${normal}"
 wait

@@ -69,7 +69,7 @@ public class MainProgram {
         DestinationAirportInt dpInt = null;
 
         try {
-            dpInt = (DestinationAirportInt) UnicastRemoteObject.exportObject(dt, SimulationParameters.DEPARTURE_AIRPORT_PORT);
+            dpInt = (DestinationAirportInt) UnicastRemoteObject.exportObject(dt, SimulationParameters.DESTINATION_AIRPORT_PORT);
         } catch (RemoteException e) {
             GenericIO.writelnString("DestinationAirport stub generation exception: " + e.getMessage());
             e.printStackTrace();

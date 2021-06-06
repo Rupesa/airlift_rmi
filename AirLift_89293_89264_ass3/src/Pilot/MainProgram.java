@@ -65,7 +65,7 @@ public class MainProgram {
         }
 
         try {
-            destinationAirport = (DestinationAirportInt) registry.lookup(SimulationParameters.DEPARTURE_AIRPORT_NAME_ENTRY);
+            destinationAirport = (DestinationAirportInt) registry.lookup(SimulationParameters.DESTINATION_AIRPORT_NAME_ENTRY);
         } catch (NotBoundException ex) {
             System.out.println("DestinationAirport is not registered: " + ex.getMessage());
             ex.printStackTrace();
@@ -88,6 +88,8 @@ public class MainProgram {
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
+
+        //registry.unbind(SimulationParameters.REGISTRY_NAME_ENTRY);
 
         GenericIO.writelnString("The pilot has terminated.");
     }

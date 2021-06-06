@@ -65,7 +65,8 @@ public class MainProgram {
         }
 
         /* Initialize the shared region */
-        DepartureAirport dp = new DepartureAirport(logger);
+        // DepartureAirport dp = new DepartureAirport(logger);
+        DepartureAirport dp = new DepartureAirport(SimulationParameters.MIN_PASSENGER, SimulationParameters.MAX_PASSENGER, SimulationParameters.TTL_PASSENGER, logger);
         DepartureAirportInt dpInt = null;
 
         try {

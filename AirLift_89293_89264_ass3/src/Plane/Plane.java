@@ -203,5 +203,6 @@ public class Plane implements PlaneInt {
     @Override
     public synchronized void serviceEnd() throws RemoteException {
         MainProgram.serviceEnd = true;
+        notifyAll();
     }
 }

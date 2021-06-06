@@ -340,5 +340,6 @@ public class DepartureAirport implements DepartureAirportInt{
     public synchronized void serviceEnd() throws RemoteException {
         MainProgram.serviceEnd = true;
         repos.serviceEnd();
+        notifyAll();
     }
 }

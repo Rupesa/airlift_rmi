@@ -65,11 +65,12 @@ public class MainProgram {
         }
 
         /* Initialize the shared region */
-        Plane pl = new Plane(logger);
+        // Plane pl = new Plane(logger);
+        Plane pl = new Plane(SimulationParameters.TTL_PASSENGER, logger);
         PlaneInt plInt = null;
 
         try {
-            plInt = (PlaneInt) UnicastRemoteObject.exportObject(pl, SimulationParameters.DEPARTURE_AIRPORT_PORT);
+            plInt = (PlaneInt) UnicastRemoteObject.exportObject(pl, SimulationParameters.PLANE_PORT);
         } catch (RemoteException e) {
             GenericIO.writelnString("Plane stub generation exception: " + e.getMessage());
             e.printStackTrace();
