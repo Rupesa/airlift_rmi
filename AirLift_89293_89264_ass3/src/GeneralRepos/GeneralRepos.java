@@ -326,5 +326,6 @@ public class GeneralRepos implements GeneralReposInt{
     @Override
     public synchronized void serviceEnd() throws RemoteException  {
         MainProgram.serviceEnd = true;
+        notifyAll();
     }
 }
