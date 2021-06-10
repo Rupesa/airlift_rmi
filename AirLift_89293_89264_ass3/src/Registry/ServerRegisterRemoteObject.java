@@ -83,7 +83,7 @@ public class ServerRegisterRemoteObject
      { registry.rebind (nameEntry, regEngineStub);
      }
      catch (RemoteException e)
-     { GenericIO.writelnString ("RegisterRemoteObject remote exception on registration: " + e.getMessage ());
+     { GenericIO.writelnString ("RegisterRemoteObject remote exception on registrationn: " + e.getMessage ());
        System.exit (1);
      }
      GenericIO.writelnString ("RegisterRemoteObject object was registered!");
