@@ -217,11 +217,11 @@ public class SimulationParameters {
 //     */
 //    public final static String REGISTRY_NAME_ENTRY = "RegisterHandler";
 
-//     /**
-//      * It can not be instantiated.
-//      */
-//     private SimulationParameters() {
-//     }
+    /**
+     * It can not be instantiated.
+     */
+    private SimulationParameters() {
+    }
 
 
 }

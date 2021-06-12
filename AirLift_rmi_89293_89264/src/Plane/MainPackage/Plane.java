@@ -4,8 +4,6 @@ import EntitiesState.PassengerState;
 import EntitiesState.PilotState;
 import Interfaces.GeneralReposInt;
 import Interfaces.PlaneInt;
-import commInfra.MemException;
-import commInfra.MemFIFO;
 import genclass.GenericIO;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;

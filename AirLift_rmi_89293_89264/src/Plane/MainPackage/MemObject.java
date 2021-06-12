@@ -1,4 +1,4 @@
-package commInfra;
+package MainPackage;
 
 /**
  *  Parametric memory.

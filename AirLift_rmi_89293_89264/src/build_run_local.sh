@@ -152,7 +152,7 @@ echo -e "\n${bold}>>>>> Executing each node${normal}"
 
 echo -e "\n${bold}->${normal} Starting registry ${normal}"
 cd Registry
-rmiregistry -J-Djava.rmi.server.useCodebaseOnly=false 22465 &
+rmiregistry -J-Djava.rmi.server.useCodebaseOnly=false 8086 &
 regId=$!
 cd ..
 

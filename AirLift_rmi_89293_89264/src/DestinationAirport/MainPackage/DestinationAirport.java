@@ -2,8 +2,6 @@ package MainPackage;
 
 import Interfaces.DestinationAirportInt;
 import Interfaces.GeneralReposInt;
-import commInfra.MemException;
-import commInfra.MemFIFO;
 import genclass.GenericIO;
 import java.util.logging.Level;
 import java.util.logging.Logger;

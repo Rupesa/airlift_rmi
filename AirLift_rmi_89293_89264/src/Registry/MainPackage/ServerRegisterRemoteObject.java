@@ -66,7 +66,7 @@ public class ServerRegisterRemoteObject
 
     /* register it with the local registry service */
 
-     String nameEntry = SimulationParameters.REGISTRY_NAME_ENTRY;
+     String nameEntry = "RegisterHandler";
      Registry registry = null;
 
      try

@@ -42,14 +42,24 @@ mkdir -p Passenger/target/Interfaces
 mkdir -p Passenger/target/MainPackage
 
 echo -e "\n${bold} Copy simulation parameters ${normal}"
-cp SimulationParameters/remote_SimulationParameters.java Registry/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java GeneralRepos/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java DepartureAirport/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java DestinationAirport/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java Plane/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java Passenger/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java Hostess/MainPackage/SimulationParameters.java
-cp SimulationParameters/remote_SimulationParameters.java Pilot/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java Registry/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java GeneralRepos/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java DepartureAirport/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java DestinationAirport/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java Plane/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java Hostess/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java Pilot/MainPackage/SimulationParameters.java
+cp SimulationParameters/SimulationParameters.java Passenger/MainPackage/SimulationParameters.java
+
+cp commInfra/MemException.java DepartureAirport/MainPackage/MemException.java
+cp commInfra/MemFIFO.java DepartureAirport/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java DepartureAirport/MainPackage/MemObject.java
+cp commInfra/MemException.java DestinationAirport/MainPackage/MemException.java
+cp commInfra/MemFIFO.java DestinationAirport/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java DestinationAirport/MainPackage/MemObject.java
+cp commInfra/MemException.java Plane/MainPackage/MemException.java
+cp commInfra/MemFIFO.java Plane/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java Plane/MainPackage/MemObject.java
 
 echo -e "\n${bold} Copy genclass jars ${normal}"
 cp genclass.jar Registry/

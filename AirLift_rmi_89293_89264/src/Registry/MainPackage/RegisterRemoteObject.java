@@ -32,7 +32,7 @@ public class RegisterRemoteObject implements RegisterInt
      * Number of unbinds allowed in registered. After this number of unbinds,
      * service shuts down.
      */
-    private int posssibleUnbinds = 6;
+    private int posssibleUnbinds = 4;
 
   /**
    *  Instantiation of a registering object (where the registering service is supposed to be located).
