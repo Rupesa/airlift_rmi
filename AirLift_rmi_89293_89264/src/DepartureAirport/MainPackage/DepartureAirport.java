@@ -1,10 +1,10 @@
-package DepartureAirport.MainPackage;
+package MainPackage;
 
-import DepartureAirport.EntitiesState.HostessState;
-import DepartureAirport.EntitiesState.PassengerState;
-import DepartureAirport.EntitiesState.PilotState;
-import DepartureAirport.Interfaces.DepartureAirportInt;
-import DepartureAirport.Interfaces.GeneralReposInt;
+import EntitiesState.HostessState;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
+import Interfaces.DepartureAirportInt;
+import Interfaces.GeneralReposInt;
 import commInfra.MemException;
 import commInfra.MemFIFO;
 import genclass.GenericIO;

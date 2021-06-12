@@ -1,7 +1,6 @@
-package DestinationAirport.MainPackage;
+package MainPackage;
 
-import DestinationAirport.Interfaces.*;
-import SimulationParameters.SimulationParameters;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;

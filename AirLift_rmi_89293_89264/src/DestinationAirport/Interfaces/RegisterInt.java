@@ -1,4 +1,4 @@
-package DestinationAirport.Interfaces;
+package Interfaces;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;

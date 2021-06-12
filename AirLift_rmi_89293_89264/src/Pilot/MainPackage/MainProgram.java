@@ -1,7 +1,6 @@
-package Pilot.MainPackage;
+package MainPackage;
 
-import Pilot.Interfaces.*;
-import SimulationParameters.SimulationParameters;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

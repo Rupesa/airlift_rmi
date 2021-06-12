@@ -1,7 +1,7 @@
-package Hostess.MainPackage;
+package MainPackage;
 
-import Hostess.EntitiesState.HostessState;
-import Hostess.Interfaces.*;
+import EntitiesState.HostessState;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.RemoteException;
 

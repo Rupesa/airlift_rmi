@@ -1,7 +1,6 @@
-package Hostess.MainPackage;
+package MainPackage;
 
-import Hostess.Interfaces.*;
-import SimulationParameters.SimulationParameters;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

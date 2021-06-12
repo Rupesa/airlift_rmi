@@ -1,4 +1,4 @@
-package DestinationAirport.EntitiesState;
+package EntitiesState;
 
 /**
  * Definition of the internal states of the passenger during his life cycle.

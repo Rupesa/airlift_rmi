@@ -1,7 +1,7 @@
-package Pilot.MainPackage;
+package MainPackage;
 
-import Pilot.EntitiesState.PilotState;
-import Pilot.Interfaces.*;
+import EntitiesState.PilotState;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.RemoteException;
 

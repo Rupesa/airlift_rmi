@@ -1,8 +1,8 @@
-package DestinationAirport.Interfaces;
+package Interfaces;
 
-import DestinationAirport.EntitiesState.HostessState;
-import DestinationAirport.EntitiesState.PassengerState;
-import DestinationAirport.EntitiesState.PilotState;
+import EntitiesState.HostessState;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 

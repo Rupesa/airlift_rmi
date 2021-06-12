@@ -1,7 +1,6 @@
-package Passenger.MainPackage;
+package MainPackage;
 
-import Passenger.Interfaces.*;
-import SimulationParameters.SimulationParameters;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

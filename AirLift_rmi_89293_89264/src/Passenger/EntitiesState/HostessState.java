@@ -1,4 +1,4 @@
-package Passenger.EntitiesState;
+package EntitiesState;
 
 /**
  * Definition of the internal states of the hostess during his life cycle.

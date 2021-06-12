@@ -1,8 +1,8 @@
-package Hostess.Interfaces;
+package Interfaces;
 
-import Hostess.EntitiesState.HostessState;
-import Hostess.EntitiesState.PassengerState;
-import Hostess.EntitiesState.PilotState;
+import EntitiesState.HostessState;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 

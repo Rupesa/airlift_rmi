@@ -1,4 +1,4 @@
-package DestinationAirport.Interfaces;
+package Interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

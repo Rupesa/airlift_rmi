@@ -1,8 +1,8 @@
-package Passenger.MainPackage;
+package MainPackage;
 
-import Passenger.EntitiesState.PassengerState;
-import Passenger.EntitiesState.PilotState;
-import Passenger.Interfaces.*;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.RemoteException;
 

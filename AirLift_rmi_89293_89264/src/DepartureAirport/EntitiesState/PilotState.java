@@ -1,4 +1,4 @@
-package DepartureAirport.EntitiesState;
+package EntitiesState;
 
 /**
  * Definition of the internal states of the pilot during his life cycle.

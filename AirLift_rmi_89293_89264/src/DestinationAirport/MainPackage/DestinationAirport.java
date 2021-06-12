@@ -1,7 +1,7 @@
-package DestinationAirport.MainPackage;
+package MainPackage;
 
-import DestinationAirport.Interfaces.DestinationAirportInt;
-import DestinationAirport.Interfaces.GeneralReposInt;
+import Interfaces.DestinationAirportInt;
+import Interfaces.GeneralReposInt;
 import commInfra.MemException;
 import commInfra.MemFIFO;
 import genclass.GenericIO;
