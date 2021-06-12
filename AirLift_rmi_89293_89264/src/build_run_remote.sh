@@ -214,6 +214,7 @@ echo -e "\n${bold}>>>>> Organizing classes in each workstation${normal}"
 
 echo -e "\n${bold}-${normal} Organizing registry and GeneralRepos classes in workstation ${bold}01${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws01.ua.pt << EOF
+
 	unzip Registry.zip
 	rm Registry.zip
 
@@ -243,6 +244,7 @@ EOF
 
 echo -e "\n${bold}-${normal} Organizing departure airport classes in workstation ${bold}02${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws02.ua.pt << EOF
+
 	unzip DepartureAirport.zip
 	rm DepartureAirport.zip
 
@@ -255,22 +257,9 @@ sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws02.ua.pt << EOF
     rm -rf DepartureAirport
 EOF
 
-echo -e "\n${bold}-${normal} Organizing destination airport classes in workstation ${bold}03${normal}"
+echo -e "\n${bold}-${normal} Organizing plane classes in workstation ${bold}03${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws03.ua.pt << EOF
-	unzip DestinationAirport.zip
-	rm DestinationAirport.zip
 
-    cd Public
-    rm -rf classes
-    mkdir -p classes
-
-    cd ..
-    mv DestinationAirport/target/* Public/classes/
-    rm -rf DestinationAirport
-EOF
-
-echo -e "\n${bold}-${normal} Organizing plane classes in workstation ${bold}04${normal}"
-sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws04.ua.pt << EOF
 	unzip Plane.zip
 	rm Plane.zip
 
@@ -283,22 +272,40 @@ sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws04.ua.pt << EOF
     rm -rf Plane
 EOF
 
-echo -e "\n${bold}-${normal} Organizing passenger classes in workstation ${bold}05${normal}"
-sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws05.ua.pt << EOF
-	unzip Passenger.zip
-	rm Passenger.zip
+echo -e "\n${bold}-${normal} Organizing destination airport classes in workstation ${bold}04${normal}"
+sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws04.ua.pt << EOF
+
+	unzip DestinationAirport.zip
+	rm DestinationAirport.zip
 
     cd Public
     rm -rf classes
     mkdir -p classes
 
     cd ..
-    mv Passenger/target/* Public/classes/
-    rm -rf Passenger
+    mv DestinationAirport/target/* Public/classes/
+    rm -rf DestinationAirport
+EOF
+
+echo -e "\n${bold}-${normal} Organizing hostess classes in workstation ${bold}05${normal}"
+sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws05.ua.pt << EOF
+
+	unzip Hostess.zip
+	rm Hostess.zip
+
+
+    cd Public
+    rm -rf classes
+    mkdir -p classes
+
+    cd ..
+    mv Hostess/target/* Public/classes/
+    rm -rf Hostess
 EOF
 
 echo -e "\n${bold}-${normal} Organizing pilot classes in workstation ${bold}06${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws06.ua.pt << EOF
+
 	unzip Pilot.zip
 	rm Pilot.zip
 
@@ -311,19 +318,18 @@ sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws06.ua.pt << EOF
     rm -rf Pilot
 EOF
 
-echo -e "\n${bold}-${normal} Organizing hostess classes in workstation ${bold}07${normal}"
+echo -e "\n${bold}-${normal} Organizing passenger classes in workstation ${bold}07${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws07.ua.pt << EOF
-	unzip Hostess.zip
-	rm Hostess.zip
-
+	unzip Passenger.zip
+	rm Passenger.zip
 
     cd Public
     rm -rf classes
     mkdir -p classes
 
     cd ..
-    mv Hostess/target/* Public/classes/
-    rm -rf Hostess
+    mv Passenger/target/* Public/classes/
+    rm -rf Passenger
 EOF
 
 ##############################################################################
@@ -386,7 +392,7 @@ xterm -e sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws05.ua.pt 
     java -cp ".:./genclass.jar" -Djava.rmi.server.codebase="http://l040101-ws01.ua.pt/sd406/registry/classes/"\
         -Djava.rmi.server.useCodebaseOnly=true\
         -Djava.security.policy=java.policy\
-        MainPackage.MainProgram' &
+        MainPackage.MainProgram &' &
 sleep 1
 
 echo -e "\n${bold}-${normal} Executing pilot in workstation ${bold}06${normal}"
@@ -395,7 +401,7 @@ xterm -e sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws06.ua.pt 
     java -cp ".:./genclass.jar" -Djava.rmi.server.codebase="http://l040101-ws01.ua.pt/sd406/registry/classes/"\
         -Djava.rmi.server.useCodebaseOnly=true\
         -Djava.security.policy=java.policy\
-        MainPackage.MainProgram' &
+        MainPackage.MainProgram &' &
 sleep 1
 
 echo -e "\n${bold}-${normal} Executing hostess in workstation ${bold}07${normal}"
@@ -404,7 +410,7 @@ xterm -e sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws07.ua.pt 
     java -cp ".:./genclass.jar" -Djava.rmi.server.codebase="http://l040101-ws01.ua.pt/sd406/registry/classes/"\
         -Djava.rmi.server.useCodebaseOnly=true\
         -Djava.security.policy=java.policy\
-        MainPackage.MainProgram' &
+        MainPackage.MainProgram &' &
 
 ##############################################################################
 wait $registrypid
@@ -418,8 +424,8 @@ EOF
 echo -e "\n${bold}>>>>> Retrieving logs${normal}"
 
 sshpass -e sftp -o StrictHostKeyChecking=no sd406@l040101-ws01.ua.pt << !
-	cd Public/GeneralRepos/classes
-	get -r log.txt
+	cd Public/generalRepos/classes
+	get -r rep.txt
 	bye
 !
 
@@ -429,7 +435,7 @@ echo -e "\n${bold}>>>>> Cleaning files on remote machines${normal}"
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws01.ua.pt << EOF
     cd Public 
     rm -rf registry
-    rm -rf GeneralRepos
+    rm -rf generalRepos
 EOF
 
 sshpass -e ssh -T -o StrictHostKeyChecking=no sd406@l040101-ws02.ua.pt << EOF
