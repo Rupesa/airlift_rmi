@@ -1,7 +1,6 @@
 package MainPackage;
 
 import Interfaces.*;
-import SimulationParameters.SimulationParameters;
 import genclass.GenericIO;
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;

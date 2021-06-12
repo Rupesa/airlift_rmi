@@ -1,7 +1,6 @@
-package GeneralRepos.MainPackage;
+package MainPackage;
 
-import GeneralRepos.Interfaces.*;
-import SimulationParameters.SimulationParameters;
+import Interfaces.*;
 import genclass.GenericIO;
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;

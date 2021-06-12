@@ -1,15 +1,14 @@
-package GeneralRepos.MainPackage;
+package MainPackage;
 
-import GeneralRepos.EntitiesState.HostessState;
-import GeneralRepos.EntitiesState.PassengerState;
-import GeneralRepos.EntitiesState.PilotState;
-import GeneralRepos.Interfaces.DepartureAirportInt;
-import SimulationParameters.SimulationParameters;
+import EntitiesState.HostessState;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
+import Interfaces.DepartureAirportInt;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.rmi.RemoteException;
-import GeneralRepos.Interfaces.GeneralReposInt;
+import Interfaces.GeneralReposInt;
 import java.util.Objects;
 import genclass.GenericIO;
 import genclass.TextFile;

@@ -1,8 +1,8 @@
-package GeneralRepos.Interfaces;
+package Interfaces;
 
-import GeneralRepos.EntitiesState.HostessState;
-import GeneralRepos.EntitiesState.PassengerState;
-import GeneralRepos.EntitiesState.PilotState;
+import EntitiesState.HostessState;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
