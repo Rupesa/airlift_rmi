@@ -52,6 +52,16 @@ cp SimulationParameters/SimulationParameters.java Hostess/MainPackage/Simulation
 cp SimulationParameters/SimulationParameters.java Pilot/MainPackage/SimulationParameters.java
 cp SimulationParameters/SimulationParameters.java Passenger/MainPackage/SimulationParameters.java
 
+cp commInfra/MemException.java DepartureAirport/MainPackage/MemException.java
+cp commInfra/MemFIFO.java DepartureAirport/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java DepartureAirport/MainPackage/MemObject.java
+cp commInfra/MemException.java DestinationAirport/MainPackage/MemException.java
+cp commInfra/MemFIFO.java DestinationAirport/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java DestinationAirport/MainPackage/MemObject.java
+cp commInfra/MemException.java Plane/MainPackage/MemException.java
+cp commInfra/MemFIFO.java Plane/MainPackage/MemFIFO.java
+cp commInfra/MemObject.java Plane/MainPackage/MemObject.java
+
 echo -e "\n${bold}>>>>> Copy genclass jars ${normal}"
 cp genclass.jar Registry/
 cp genclass.jar GeneralRepos/
@@ -149,7 +159,7 @@ cd ..
 echo -e "\n${bold}->${normal} Executing Registry"
 cd Registry/target/
 
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Registry/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      -Djava.security.policy=java.policy\
      MainPackage.ServerRegisterRemoteObject &
@@ -159,7 +169,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing GeneralRepos"
 cd GeneralRepos/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/GeneralRepos/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      -Djava.security.policy=java.policy\
      MainPackage.MainProgram &
@@ -168,7 +178,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Departure Airport"
 cd DepartureAirport/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/DepartureAirport/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      -Djava.security.policy=java.policy\
      MainPackage.MainProgram &
@@ -177,7 +187,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Plane"
 cd Plane/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Plane/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      -Djava.security.policy=java.policy\
      MainPackage.MainProgram &
@@ -186,7 +196,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Destination Airport"
 cd DestinationAirport/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/DestinationAirport/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
 	-Djava.rmi.server.useCodebaseOnly=false\
 	-Djava.security.policy=java.policy\
 	MainPackage.MainProgram &
@@ -198,7 +208,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Hostess"
 cd Hostess/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Hostess/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      MainPackage.MainProgram &
 cd ../../
@@ -206,7 +216,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Pilot"
 cd Pilot/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Pilot/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      MainPackage.MainProgram &
 cd ../../
@@ -214,7 +224,7 @@ sleep 1
 
 echo -e "\n${bold}->${normal} Executing Passenger"
 cd Passenger/target/
-java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_89293_89264_ass3/src/Passenger/target/"\
+java -cp ".:../genclass.jar" -Djava.rmi.server.codebase="file:///Users/ruisantos/Desktop/ano4/sd/proj3/airlift_rmi/AirLift_rmi_89293_89264/src/Registry/target/"\
      -Djava.rmi.server.useCodebaseOnly=false\
      MainPackage.MainProgram &
 cd ../../

@@ -1,9 +1,9 @@
-package Plane.MainPackage;
+package MainPackage;
 
-import Plane.EntitiesState.PassengerState;
-import Plane.EntitiesState.PilotState;
-import Plane.Interfaces.GeneralReposInt;
-import Plane.Interfaces.PlaneInt;
+import EntitiesState.PassengerState;
+import EntitiesState.PilotState;
+import Interfaces.GeneralReposInt;
+import Interfaces.PlaneInt;
 import commInfra.MemException;
 import commInfra.MemFIFO;
 import genclass.GenericIO;

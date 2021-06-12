@@ -1,4 +1,4 @@
-package Registry.MainPackage;
+package MainPackage;
 
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
@@ -7,8 +7,7 @@ import java.rmi.AccessException;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.server.*;
 import genclass.GenericIO;
-import Registry.Interfaces.RegisterInt;
-import SimulationParameters.SimulationParameters;
+import Interfaces.RegisterInt;
 import java.rmi.NotBoundException;
 
 /**

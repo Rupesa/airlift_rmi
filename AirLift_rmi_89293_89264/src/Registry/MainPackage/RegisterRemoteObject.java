@@ -1,4 +1,4 @@
-package Registry.MainPackage;
+package MainPackage;
 
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
@@ -6,7 +6,7 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import Registry.Interfaces.RegisterInt;
+import Interfaces.RegisterInt;
 
 /**
  *   Generic functionality to register remote objects in the local registry service.

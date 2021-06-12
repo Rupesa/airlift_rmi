@@ -1,6 +1,6 @@
-package Plane.MainPackage;
+package MainPackage;
 
-import Plane.Interfaces.*;
+import Interfaces.*;
 import SimulationParameters.SimulationParameters;
 import genclass.GenericIO;
 import java.rmi.AlreadyBoundException;
